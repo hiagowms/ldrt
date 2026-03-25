@@ -176,22 +176,48 @@
   <!-- Info Dialog Overlay -->
   <div id="info-dialog" class="dialog-overlay hidden">
     <div class="dialog">
-      <div class="dialog-content">
-        <p class="mt-0">Aplicativo para consulta rápida e eficiente da Lista de Doenças Relacionadas ao Trabalho (LDRT) baseado na PORTARIA GM/MS Nº 1.999, de 27 de novembro de 2023.</p>
-        
-        <h4>Recursos:</h4>
+      <div class="dialog-header">
+        <div class="dialog-header-icon">
+          <i class="material-icons">local_hospital</i>
+        </div>
+        <div>
+          <div class="dialog-title">LDRT</div>
+          <div class="dialog-subtitle">Lista de Doenças Relacionadas ao Trabalho</div>
+        </div>
+      </div>
+
+      <div 
+      
+        <p class="dialog-description">Consulta rápida baseada na <strong>Portaria GM/MS Nº 1.999</strong>, de 27 de novembro de 2023.</p>
+
+        <div class="dialog-divider"></div>
+
+        <p class="dialog-section-label">Funcionalidades</p>
         <div class="resource-list">
-          <p><strong>🔍 Busca bidirecional:</strong> Pesquise por uma doença para ver os agentes e fatores de risco associados, ou pesquise por um agente/fator de risco para descobrir as doenças relacionadas.</p>
-          <p><strong>♾️ Navegação infinita:</strong> Toque em uma doença para ver seus agentes/fatores de risco. Depois, toque em qualquer um desses itens para ver outras doenças relacionadas – e continue explorando assim, sem limites.</p>
-          <p><strong>📋 Cópia rápida:</strong> Toque e segure em um item para copiá-lo individualmente, ou toque no ícone de cópia para copiar todos os itens da lista de uma vez.</p>
+          <div class="resource-item">
+            <i class="material-icons resource-icon">swap_horiz</i>
+            <div><strong>Busca bidirecional</strong><br><span class="resource-desc">Pesquise por doença ou por agente/fator de risco.</span></div>
+          </div>
+          <div class="resource-item">
+            <i class="material-icons resource-icon">account_tree</i>
+            <div><strong>Navegação encadeada</strong><br><span class="resource-desc">Explore relações entre doenças e fatores sem limites.</span></div>
+          </div>
+          <div class="resource-item">
+            <i class="material-icons resource-icon">content_copy</i>
+            <div><strong>Cópia rápida</strong><br><span class="resource-desc">Toque e segure para copiar um item, ou use o ícone para copiar a lista inteira.</span></div>
+          </div>
         </div>
 
-        <p>Programa de Educação pelo Trabalho para a Saúde: Informação e Saúde Digital (PET-Saúde/I&SD)</p>
+        <div class="dialog-divider"></div>
 
-        </ul>
+        <div class="dialog-pet">
+          <i class="material-icons dialog-pet-icon">school</i>
+          <span>Desenvolvido no contexto do <strong>PET-Saúde/I&SD</strong> — Programa de Educação pelo Trabalho para a Saúde: Informação e Saúde Digital.</span>
+        </div>
 
-        <p class="mb-0">Compatível com Windows, Linux, MACOS, Android, Ios, torradeiras, microondas, máquinas de lavar, calculadoras,  .</p>
+        <p class="dialog-compat">Compatível com Windows, Linux, macOS, Android, iOS e air fryer. </p>
       </div>
+
       <div class="dialog-actions">
         <button id="btn-close-info" class="text-btn">Fechar</button>
       </div>
