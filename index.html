@@ -102,6 +102,24 @@
       border-left: 2px solid var(--border);
       padding-left: 16px;
     }
+    .header-pet {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-left: 2px solid var(--border);
+      padding-left: 16px;
+    }
+    .header-pet img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+    .header-pet span {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
 
     /* Main Layout */
     .main-body {
@@ -555,7 +573,7 @@
       width: 100%;
       margin-bottom: 24px;
     }
-    .welcome-pet svg { width: 20px; height: 20px; color: #7c3aed; flex-shrink: 0; }
+    .welcome-pet img { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; }
     .welcome-pet span {
       font-size: 13px;
       color: #4c1d95;
@@ -601,6 +619,10 @@
     <header class="header">
       <div class="header-title">LDRT</div>
       <div class="header-subtitle">Lista de Doenças Relacionadas ao Trabalho</div>
+      <div class="header-pet">
+        <img src="./pwa/assets/logo.png" alt="PET Saúde Digital">
+        <span>PET-Saúde/I&amp;SD</span>
+      </div>
     </header>
 
     <main class="main-body">
@@ -701,10 +723,7 @@
 
           <!-- Crédito PET -->
           <div class="welcome-pet">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422A12.083 12.083 0 0121 21H3a12.083 12.083 0 012.84-10.422L12 14z"/>
-            </svg>
+            <img src="./pwa/assets/logo.png" alt="PET Saúde Digital">
             <span>Desenvolvido no <strong>PET-Saúde/I&amp;SD</strong> — Programa de Educação pelo Trabalho para a Saúde: Informação e Saúde Digital.</span>
           </div>
 
