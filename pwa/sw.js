@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ldrt-pwa-v1';
+const CACHE_NAME = 'ldrt-pwa-v2';
 const ASSETS = [
   './index.html',
   './manifest.json',

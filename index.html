@@ -434,6 +434,22 @@
     .expand-btn svg { width: 18px; height: 18px; transition: transform 0.3s; }
     .expand-btn.open svg { transform: rotate(180deg); }
 
+    .nav-btn {
+      border: none;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: filter 0.2s, transform 0.15s;
+    }
+    .nav-btn:hover { filter: brightness(0.85); transform: scale(1.1); }
+    .nav-btn svg { width: 15px; height: 15px; }
+
     .related-card-expansion {
       margin-top: 16px;
       padding-top: 16px;
@@ -618,6 +634,34 @@
         updateList();
       });
 
+      window.navigateToRelated = (relEncoded, targetMode) => {
+        const rel = decodeURIComponent(relEncoded);
+        currentMode = targetMode;
+
+        const isDisease = targetMode === 'Doença';
+        toggleGroup.classList.toggle('is-risco', !isDisease);
+        btnDoenca.classList.toggle('active', isDisease);
+        btnRisco.classList.toggle('active', !isDisease);
+        categorySelect.style.display = isDisease ? 'none' : 'block';
+        searchInput.placeholder = isDisease ? 'Buscar Doença ou CID...' : 'Buscar Agente ou Fator...';
+
+        let foundItem;
+        if (!isDisease) {
+          foundItem = data.find(d => normalize(d.fator_de_risco.trim()) === normalize(rel));
+        } else {
+          const namePart = rel.split(' - ')[0].trim();
+          foundItem = data.find(d => normalize(d.nome_condicao.trim()) === normalize(namePart));
+        }
+
+        if (foundItem) {
+          const key = isDisease
+            ? `${foundItem.nome_condicao.trim()} - ${foundItem.cid_com_ponto.trim()}`
+            : foundItem.fator_de_risco.trim();
+          updateList();
+          renderDetail(foundItem, key);
+        }
+      };
+
       window.copyAllContent = (btnAttr) => {
         try {
             const rawData = JSON.parse(decodeURIComponent(btnAttr));
@@ -648,6 +692,7 @@
         if (activeEl) activeEl.classList.add('active', currentMode === 'Doença' ? 'doenca' : 'risco');
 
         const isDisease = currentMode === 'Doença';
+        const activeColor = isDisease ? '#1A237E' : '#006064';
         const titleText = isDisease ? item.nome_condicao.trim() : item.fator_de_risco.trim();
         const headerText = isDisease ? `${titleText} - ${item.cid_com_ponto.trim()}` : titleText;
 
@@ -693,15 +738,21 @@
 
         relatedArr.forEach(rel => {
           const canExpand = isDisease && !!expansions[rel];
+          const navTarget = isDisease ? 'Fator de Risco' : 'Doença';
           html += `
             <div class="related-card">
               <div class="related-card-header">
                 <div class="related-card-title">${rel}</div>
-                ${canExpand ? `
-                <button class="expand-btn" onclick="const p=this.parentElement.nextElementSibling; const t=p.classList.toggle('open'); this.classList.toggle('open');">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                </button>
-                ` : ''}
+                <div style="display:flex;align-items:center;gap:4px;flex-shrink:0">
+                  ${canExpand ? `
+                  <button class="expand-btn" onclick="const p=this.parentElement.parentElement.nextElementSibling; const t=p.classList.toggle('open'); this.classList.toggle('open');">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                  ` : ''}
+                  <button class="nav-btn" style="background:${activeColor}" title="Ver relacionados" onclick="navigateToRelated('${encodeURIComponent(rel)}', '${navTarget}')">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                  </button>
+                </div>
               </div>
               ${canExpand ? `<div class="related-card-expansion">${expansions[rel]}</div>` : ''}
             </div>
