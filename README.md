@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="pwa/assets/logo.png" height="90" alt="LDRT" />
+  <img src="pwa/assets/logo.png" height="90" alt="PET-Saúde / I&SD" />
   &nbsp;&nbsp;&nbsp;
   <img src="pwa/assets/logo2.png" height="90" alt="CEREST Botucatu" />
 </p>
@@ -14,13 +14,17 @@
 ![Sem anúncios](https://img.shields.io/badge/sem%20an%C3%BAncios-yes-brightgreen)
 ![LGPD](https://img.shields.io/badge/LGPD-compliant-brightgreen)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
+![PET-Saúde I&SD](https://img.shields.io/badge/PET--Sa%C3%BAde-I%26SD-4a148c)
 
 **LDRT Web é a versão web/PWA gratuita, sem anúncios e offline-first do buscador da Lista de Doenças Relacionadas ao Trabalho (LDRT), baseada na PORTARIA GM/MS Nº 1.999, de 27 de novembro de 2023.** Abre no navegador, instala como app (PWA) e funciona sem internet após o primeiro acesso. Mesma lógica do app Android: escolha o modo de busca (Doença ou Agente/Fator de Risco), digite o termo ou CID-10 e navegue por uma rede bidirecional que liga cada doença aos seus fatores de risco — e cada fator às doenças que ele provoca.
 
-Desenvolvido por **Hiago Wállacy Marques Silva (Médico — CEREST Botucatu)**, com revisão e divulgação da equipe do **CEREST Botucatu**.
+Desenvolvido no contexto do **PET-Saúde / Informação e Saúde Digital (I&SD)** — Programa de Educação pelo Trabalho para a Saúde — em parceria com o **CEREST Botucatu**. Faz parte da mesma linha de ferramentas livres e auditáveis do PET-Saúde/I&SD, junto com o [Assistente SINAN](https://github.com/hiagowms/assistente-sinan) e o app Android [LDRT](https://github.com/hiagowms/ldrt-android).
+
+Autoria: **Hiago Wállacy Marques Silva** (Médico — CEREST Botucatu), com revisão e divulgação da equipe do **CEREST Botucatu**.
 
 🌐 **Acesse agora:** [hiagowms.github.io/ldrt](https://hiagowms.github.io/ldrt/)
 📲 **Versão Android nativa:** [Play Store — com.ldrtcrst.app](https://play.google.com/store/apps/details?id=com.ldrtcrst.app&hl=pt_BR) · [Código-fonte](https://github.com/hiagowms/ldrt-android)
+🤝 **Projeto irmão (PET-Saúde/I&SD):** [Assistente SINAN](https://github.com/hiagowms/assistente-sinan)
 
 > [!WARNING]
 > **Este aplicativo não é oficial** e não substitui a consulta direta à portaria oficial do Ministério da Saúde. Use como ferramenta de apoio à prática clínica e ao ensino, não como fonte normativa única.
@@ -171,7 +175,16 @@ Em conformidade com a **Lei Geral de Proteção de Dados (LGPD — Lei 13.709/20
 
 ## Contexto Institucional 🤝
 
-Aplicativo desenvolvido por **Hiago Wállacy Marques Silva** (Médico — CEREST Botucatu), com revisão e divulgação pela equipe do **CEREST Botucatu** (Centro de Referência em Saúde do Trabalhador). Ferramenta de utilidade pública para apoiar o ensino e a prática em saúde do trabalhador.
+Aplicativo desenvolvido no contexto do **PET-Saúde / Informação e Saúde Digital (I&SD)** — Programa de Educação pelo Trabalho para a Saúde, iniciativa interministerial (MS/MEC) que articula ensino-serviço-comunidade e fomenta a produção de tecnologias digitais em saúde com foco em informação, ensino e prática SUS.
+
+Crédito no app: *"Desenvolvido no PET-Saúde/I&SD — Programa de Educação pelo Trabalho para a Saúde: Informação e Saúde Digital."* (splash do PWA, diálogo de informações e tela inicial do desktop).
+
+Autoria: **Hiago Wállacy Marques Silva** (Médico — CEREST Botucatu), com revisão e divulgação pela equipe do **CEREST Botucatu** (Centro de Referência em Saúde do Trabalhador). Ferramenta de utilidade pública para apoiar o ensino e a prática em saúde do trabalhador.
+
+Compõe a linha de ferramentas livres do PET-Saúde/I&SD ao lado de:
+
+- [**Assistente SINAN**](https://github.com/hiagowms/assistente-sinan) — gerador de PDF AcroForm para 11 fichas SINAN, mesmo modelo client-side/offline-first.
+- [**LDRT (Android)**](https://github.com/hiagowms/ldrt-android) — versão nativa Flutter publicada na Play Store.
 
 ## Avisos Legais ⚠️
 
